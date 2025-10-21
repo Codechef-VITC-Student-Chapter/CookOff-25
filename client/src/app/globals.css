@@ -1,15 +1,10 @@
+/* 1. This is the new, correct way to import all of Tailwind v4 */
 @import "tailwindcss";
 
+/* 2. Your CSS variable definitions are great. Keep them. */
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,6 +14,7 @@
   }
 }
 
+/* 3. This rule is also perfectly fine. */
 body {
   background: var(--background);
   color: var(--foreground);
