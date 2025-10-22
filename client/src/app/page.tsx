@@ -101,3 +101,23 @@ export default function Home() {
     </div>
   );
 }
+
+"use client";
+
+// import Navbar from "@/components/Navbar";
+// import Button from "@/components/Button";
+// import SectionHeader from "@/components/SectionHeader";
+// export default function Home() {
+//   return (
+//     <div className="min-h-screen bg-background text-foreground">
+//       <Navbar />
+//       <Button href="https://eventhubcc.vit.ac.in/EventHub/login" external>
+//   REGISTER
+//       </Button>
+//       <SectionHeader>FAQ'S</SectionHeader>
+//       <SectionHeader align="left">COUNTDOWN</SectionHeader>
+//       <SectionHeader subtitle="Learn more about our chapter">ABOUT US</SectionHeader>
+//     </div>
+    
+//   );
+// }
