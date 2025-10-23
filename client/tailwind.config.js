@@ -4,6 +4,8 @@ const config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/sections/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/sections/**/*.{js,ts,jsx,tsx,mdx}', 
+    // For your homepage sections
   ],
   theme: {
     extend: {
@@ -18,6 +20,7 @@ const config = {
       },
       fontFamily: {
       cera: ['"Cera Pro"', 'sans-serif'],
+        cerapro: ['CeraPro', 'sans-serif'],
       },
     },
   },
