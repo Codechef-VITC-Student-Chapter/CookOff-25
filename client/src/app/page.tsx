@@ -1,4 +1,5 @@
 import Image from "next/image";
+import PrizesSection from "@/components/sections/PrizesSection";
 
 export default async function Home() {
   await new Promise(resolve => setTimeout(resolve, 8000));
@@ -122,3 +123,4 @@ export default async function Home() {
     
 //   );
 // }
+
