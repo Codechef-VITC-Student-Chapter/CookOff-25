@@ -3,7 +3,8 @@ const config = {
   content: [
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/sections/**/*.{js,ts,jsx,tsx,mdx}', // For your homepage sections
+    './src/app/sections/**/*.{js,ts,jsx,tsx,mdx}', 
+    // For your homepage sections
   ],
   theme: {
     extend: {
@@ -15,6 +16,9 @@ const config = {
         'bronze': '#CD7F32',
         'gray-light': '#333333',
         'gray-dark': '#222222',
+      },
+      fontFamily: {
+        cerapro: ['CeraPro', 'sans-serif'],
       },
     },
   },

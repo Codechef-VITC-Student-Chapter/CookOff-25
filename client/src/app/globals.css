@@ -1,5 +1,6 @@
 /* 1. This is the new, correct way to import all of Tailwind v4 */
 @import "tailwindcss";
+@config "../../tailwind.config.js";
 
 /* 2. Your CSS variable definitions are great. Keep them. */
 :root {
@@ -19,4 +20,96 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+  font-family: 'CeraPro';
+  src: url('/fonts/Fontspring-DEMO-cerapro-thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'CeraPro';
+  src: url('/fonts/Fontspring-DEMO-cerapro-thinitalic.otf') format('opentype');
+  font-weight: 100;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'CeraPro';
+  src: url('/fonts/Fontspring-DEMO-cerapro-light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'CeraPro';
+  src: url('/fonts/Fontspring-DEMO-cerapro-lightitalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'CeraPro';
+  src: url('/fonts/Fontspring-DEMO-cerapro-regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'CeraPro';
+  src: url('/fonts/Fontspring-DEMO-cerapro-regularitalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'CeraPro';
+  src: url('/fonts/Fontspring-DEMO-cerapro-medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'CeraPro';
+  src: url('/fonts/Fontspring-DEMO-cerapro-mediumitalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'CeraPro';
+  src: url('/fonts/Fontspring-DEMO-cerapro-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'CeraPro';
+  src: url('/fonts/Fontspring-DEMO-cerapro-bolditalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'CeraPro';
+  src: url('/fonts/Fontspring-DEMO-cerapro-black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'CeraPro';
+  src: url('/fonts/Fontspring-DEMO-cerapro-blackitalic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+}
+@keyframes ascii-blink {
+  0%, 49% { opacity: 1;
+  display: block; }
+  50%, 100% { opacity: 0;
+  display: none; }
+}
+
+@keyframes ascii-blink-rev {
+  0%, 49% { opacity: 0; 
+  display: none;}
+  50%, 100% { opacity: 1; display: block;}
+}
+
+.ascii-fade {
+  animation: ascii-blink 1s steps(1, end) infinite;
+} 
+.ascii-fade-rev {
+  animation: ascii-blink-rev 1s steps(1, end) infinite;
 }

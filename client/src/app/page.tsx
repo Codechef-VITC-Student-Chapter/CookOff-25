@@ -1,6 +1,7 @@
 import Image from "next/image";
 
-export default function Home() {
+export default async function Home() {
+  await new Promise(resolve => setTimeout(resolve, 8000));
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
@@ -20,7 +21,7 @@ export default function Home() {
             </code>
             .
           </li>
-          <li className="tracking-[-.01em]">
+          <li className="tracking-[-.01em] text-gold font-cerapro font-light italic">
             Save and see your changes instantly.
           </li>
         </ol>
@@ -102,7 +103,7 @@ export default function Home() {
   );
 }
 
-"use client";
+// "use client";
 
 // import Navbar from "@/components/Navbar";
 // import Button from "@/components/Button";
