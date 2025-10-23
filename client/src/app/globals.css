@@ -1,8 +1,8 @@
-/* 1. This is the new, correct way to import all of Tailwind v4 */
+/* 1. Import Tailwind v4 */
 @import "tailwindcss";
 @config "../../tailwind.config.js";
 
-/* 2. Your CSS variable definitions are great. Keep them. */
+/* 2. Variables */
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -15,10 +15,53 @@
   }
 }
 
-/* 3. This rule is also perfectly fine. */
+/* 3. Base body styles */
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: 'Cera Pro', Arial, Helvetica, sans-serif;
+}
+
+/* 4. Correct Cera Pro font-face definitions */
+@font-face {
+  font-family: 'Cera Pro';
+  src: url('/fonts/cera-pro/CeraPro-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cera Pro';
+  src: url('/fonts/cera-pro/CeraPro-RegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cera Pro';
+  src: url('/fonts/cera-pro/CeraPro-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cera Pro';
+  src: url('/fonts/cera-pro/CeraPro-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cera Pro';
+  src: url('/fonts/cera-pro/CeraPro-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
   font-family: Arial, Helvetica, sans-serif;
 }
 
