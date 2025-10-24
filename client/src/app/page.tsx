@@ -1,3 +1,5 @@
+import Image from "next/image";
+import PrizesSection from "@/components/sections/PrizesSection";
 // import Image from "next/image";
 
 // export default async function Home() {
