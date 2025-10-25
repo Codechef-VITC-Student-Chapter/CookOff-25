@@ -155,3 +155,6 @@ body {
 .ascii-fade-rev {
   animation: ascii-blink-rev 1s steps(1, end) infinite;
 }
+.animate-reveal {
+  animation: reveal-up 1s linear forwards;
+}

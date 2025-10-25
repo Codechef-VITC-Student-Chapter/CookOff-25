@@ -1,5 +1,5 @@
-import Image from "next/image";
-import PrizesSection from "@/components/sections/PrizesSection";
+// import Image from "next/image";
+// import PrizesSection from "@/components/sections/PrizesSection";
 // import Image from "next/image";
 
 // export default async function Home() {
@@ -217,14 +217,18 @@ import PrizesSection from "@/components/sections/PrizesSection";
 import Navbar from "@/components/Navbar";
 import Button from "@/components/Button";
 import SectionHeader from "@/components/SectionHeader";
+import Hero from "@/components/sections/Hero";
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground max-w-screen">
       <Navbar />
+      
+      <Hero/>
       <Button href="https://eventhubcc.vit.ac.in/EventHub/login" external>
   REGISTER
       </Button>
       <SectionHeader>FAQ'S</SectionHeader>
+      
       <SectionHeader align="left">COUNTDOWN</SectionHeader>
       <SectionHeader subtitle="Learn more about our chapter">ABOUT US</SectionHeader>
     </div>
