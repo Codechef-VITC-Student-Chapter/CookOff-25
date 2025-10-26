@@ -57,7 +57,7 @@ const SponsorsSection = () => {
 </div>
 
         {/* Sponsors row */}
-        <div className="flex flex-row justify-center flex-wrap gap-5 md:gap-10">
+        <div className="flex flex-row justify-center px-10 flex-wrap gap-5 md:gap-10">
           {sponsors.map((sponsor) => (
             <SponsorCard
               key={sponsor.id}
