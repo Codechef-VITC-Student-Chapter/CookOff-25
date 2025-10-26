@@ -6,7 +6,7 @@ export default function AboutPage() {
   const cardStyle =
     "w-full h-40 rounded-lg shadow-lg p-4";
   return (
-    <div className="relative min-h-screen bg-black text-white flex flex-col items-left justify-center overflow-hidden px-6 py-14">
+    <div className="relative min-h-screen bg-[#121212] text-white flex flex-col items-left justify-center overflow-hidden px-6 py-14">
       {/* Glowing background */}
       <div className="absolute inset-0 flex justify-center items-center opacity-100 pointer-events-none">
         <Image

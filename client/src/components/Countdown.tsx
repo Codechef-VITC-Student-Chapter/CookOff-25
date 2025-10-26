@@ -50,7 +50,7 @@ export default function CountdownTimer() {
   const pad = (num: number) => num.toString().padStart(2, "0");
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg-[#121212]">
       {/* Changed: Added justify-start to align timer items to left */}
       <div className="flex items-center justify-center gap-4 md:gap-6 mb-8">
         <div className="text-center relative">
