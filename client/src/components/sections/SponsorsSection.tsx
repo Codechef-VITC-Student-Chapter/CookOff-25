@@ -36,25 +36,12 @@ const SponsorsSection = () => {
   return (
     <div>
       <section className="w-full bg-[#121212] py-10 mb-10">
-        <h3 className="font-cerapro font-medium uppercase ml-20 tracking-widest sm:max-md:text-center text-3xl bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">SPONSORS</h3>
+        <h3 className="font-cerapro font-medium uppercase ml-20 tracking-widest sm:max-md:text-center text-3xl bg-linear-to-r from-white to-gray-400 bg-clip-text text-transparent">SPONSORS</h3>
 
         {/* Line separator */}
-        <div className="w-full h-1 mt-10 relative">
-          <Image
-            src="/SponserSection_Line.svg"
-            fill
-            style={{ objectFit: "cover" }}
-            alt="Line"
-          />
+        <div className="w-full h-2 mt-10 top-2 relative  bg-linear-to-r from-[#999999] via-[#FFFFFF] to-[#999999]">
         </div>
-<div className="hidden sm:max--md:block w-full h-1 mt-10 relative">
-  <Image
-    src="/SponserSection_Line.svg"
-    fill
-    style={{ objectFit: "cover" }}
-    alt="Line"
-  />
-</div>
+
 
         {/* Sponsors row */}
         <div className="flex flex-row justify-center px-10 flex-wrap gap-5 md:gap-10">

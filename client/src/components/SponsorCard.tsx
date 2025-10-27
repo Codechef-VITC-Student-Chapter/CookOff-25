@@ -21,11 +21,11 @@ const SponsorCard: React.FC<SponsorCardProps> = ({
       {/* Container */}
       <div className="relative bg-transparent">
         {/* Strap */}
-        <div className="w-3 h-12 bg-white mx-auto border-2 border-black" />
+        <div className="w-3 h-10 bg-white mx-auto border-2 border-t-0 border-b-0 z-10 relative top-2 border-black" />
 
         {/* Card */}
         <div
-          className={`mt-[-5px] bg-white w-64 h-96 border-2 border-black rounded-xl 
+          className={`mt-1 bg-white w-64 h-96 border-2 border-black rounded-xl 
           shadow-[13px_10px_19px_2px_rgba(255,255,255,0.75)]
 relative flex flex-col items-center`}
         >
