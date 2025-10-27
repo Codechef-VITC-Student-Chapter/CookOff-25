@@ -35,12 +35,11 @@ const SponsorsSection = () => {
 
   return (
     <div>
-      <Navbar />
-      <section className="w-full bg-[#1a1a1a] py-10">
-        <SectionHeader>SPONSORS</SectionHeader>
+      <section className="w-full bg-[#121212] py-10 mb-10">
+        <h3 className="font-cerapro font-medium uppercase ml-20 tracking-widest sm:max-md:text-center text-3xl bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">SPONSORS</h3>
 
         {/* Line separator */}
-        <div className="w-full h-1  relative">
+        <div className="w-full h-1 mt-10 relative">
           <Image
             src="/SponserSection_Line.svg"
             fill
@@ -48,9 +47,17 @@ const SponsorsSection = () => {
             alt="Line"
           />
         </div>
+<div className="hidden sm:max--md:block w-full h-1 mt-10 relative">
+  <Image
+    src="/SponserSection_Line.svg"
+    fill
+    style={{ objectFit: "cover" }}
+    alt="Line"
+  />
+</div>
 
         {/* Sponsors row */}
-        <div className="flex flex-row justify-center flex-wrap gap-5 md:gap-10">
+        <div className="flex flex-row justify-center px-10 flex-wrap gap-5 md:gap-10">
           {sponsors.map((sponsor) => (
             <SponsorCard
               key={sponsor.id}

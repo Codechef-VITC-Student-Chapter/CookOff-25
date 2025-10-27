@@ -4,7 +4,7 @@ import CountdownTimer from "@/components/Countdown"; // adjust path if needed
 
 export default function CountdownSection() {
   return (
-    <section className="relative min-h-screen bg-black text-white flex flex-col items-center overflow-hidden px-4 md:px-6 py-12 md:py-16">
+    <section className="relative min-h-screen bg-[#121212] text-white flex flex-col items-center overflow-hidden px-6 py-16">
       {/* Clock background PNG */}
       <div className="absolute bottom-0 right-0 opacity-100 w-[200px] h-[200px] md:w-[400px] md:h-[400px]">
         <Image
