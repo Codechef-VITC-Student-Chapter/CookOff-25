@@ -31,7 +31,7 @@ export default function AboutPage() {
 
       {/* Text Section */}
       <div className="text-left mb-20 md:mb-40">
-        <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 font-cerapro font-medium uppercase tracking-widest text-md md:text-4xl mb-6 md:mb-6 translate-x-0 md:translate-x-15/100">
+        <h2 className="text-transparent bg-clip-text bg-linear-to-r from-white to-gray-400 font-cerapro font-medium uppercase tracking-widest text-md md:text-4xl mb-6 md:mb-6 translate-x-0 md:translate-x-15/100">
           About Us
         </h2>
         <h1 className="text-sm md:text-2xl font-cerapro font-thin italic tracking-normal md:tracking-widest translate-x-0 md:translate-x-15/100">
