@@ -19,7 +19,7 @@ export default function Hero() {
       {/* Added `relative` here to act as the positioning context 
         for all the `absolute` elements inside.
       */}
-      <div className="h-screen w-full flex flex-col items-center justify-center overflow-hidden relative">
+      <div className="h-[120vh] w-full flex flex-col items-center justify-center  lg:mt-10 py-7  overflow-hidden  relative">
         <div className="flex flex-col items-center justify-center p-5 relative">
           {/* Responsive text size and tracking */}
           <motion.h1
