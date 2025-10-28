@@ -121,18 +121,16 @@ export default function HeroAnimate() {
                                                      
   return (
     
-<div className="h-screen w-full max-h-screen relative">
-
-      {frames.map((frame, index) => (
-    <pre 
-        className={`text-white text-sm font-mono leading-none whitespace-pre
-          absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-            overflow-auto 
-          ${index===0? "ascii-fade":"ascii-fade-rev"}`} 
+<div className="relative h-screen w-full">
+    {frames.map((frame, index) => (
+      <pre
         key={index}
-    >
+        className={`text-white text-[clamp(6px,0.9vw,10px)] max-[430px]:text-[2px] font-mono leading-none whitespace-pre absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+          ${index === 0 ? "ascii-fade" : "ascii-fade-rev"}`}
+      >
         {frame}
-    </pre>))}
-</div>
+      </pre>
+    ))}
+  </div>
   )
 }

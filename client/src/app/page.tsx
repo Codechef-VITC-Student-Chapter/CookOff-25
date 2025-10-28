@@ -10,12 +10,13 @@ import PrizesSection from "@/components/sections/PrizesSection";
 import SponsorsSection from "@/components/sections/SponsorsSection";
 import FaqSection from "@/components/sections/FaqSection";
 
+
 export default async function page() {
+  
   return (
     <div className="min-h-screen bg-[#121212] text-foreground">
       <Navbar />
-      <Hero>
-      </Hero>
+      <Hero/>
       <AboutPage></AboutPage>
       <CountdownSection></CountdownSection>
       <PrizesSection></PrizesSection>

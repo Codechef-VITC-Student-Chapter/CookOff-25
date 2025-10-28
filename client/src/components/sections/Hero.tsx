@@ -20,10 +20,11 @@ export default function Hero() {
         for all the `absolute` elements inside.
       */}
       <div className="h-[120vh] w-full flex flex-col items-center justify-center  lg:mt-10 py-7  overflow-hidden  relative">
+      <div className="h-screen w-full flex flex-col items-center justify-center overflow-hidden relative max-[430px]:h-auto">
         <div className="flex flex-col items-center justify-center p-5 relative">
           {/* Responsive text size and tracking */}
           <motion.h1
-        className="text-xl md:text-3xl text-white text-center p-4 font-cerapro font-medium tracking-widest md:tracking-[0.5rem]"
+        className="text-xl md:text-3xl max-[430px]:text-sm text-white text-center p-4 font-cerapro font-medium tracking-widest md:tracking-[0.5rem]"
         style={{ lineHeight: 1 }}
         
         // Initial state: a vertical line in the center
@@ -45,8 +46,9 @@ export default function Hero() {
       >
         CodeChef VITC Presents
       </motion.h1>
+      <div className="relative w-full flex justify-center items-center">
       <motion.h1
-        className="text-5xl md:text-7xl lg:text-[6rem]
+        className="text-5xl md:text-7xl lg:text-[6rem] max-[430px]:text-2xl
         text-center
         p-4 md:p-10
         text-transparent
@@ -72,14 +74,18 @@ export default function Hero() {
       >
         COOK OFF
       </motion.h1>
-
+      <img src={"/images/image 2.png"} alt="Chef's Hat" className="max-[430px]:block hidden w-10 md:w-20 lg:w-24
+      absolute top-[-5] right-5 z-12"/>
+      <img src={"/images/image 1.png"} alt="Chef's Hat" className="max-[430px]:block hidden w-10 md:w-20 lg:w-24
+      absolute bottom-6 left-5 z-12"/></div>
+        <h1 className="text-sm font-serif hidden max-[430px]:inline">2025</h1>
           {/* Replaced non-standard `mr-160` with responsive absolute positioning.
             This positions it relative to the center of the screen.
           */}
           <motion.h1
-            className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-white text-center p-4 absolute font-serif font-medium
+            className="max-[430px]:hidden inline text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-white text-center p-4 absolute font-serif font-medium
               mt-44 sm:mt-44 md:mt-64 lg:mt-80  
-              right-[calc(50%+7rem)] sm:right-[calc(50%+9rem)] md:right-[calc(50%+14rem)] lg:right-[calc(50%+17rem)] xl:right-[calc(50%+20rem)]"
+              right-[calc(50%+7rem)] sm:right-[calc(50%+9rem)] md:right-[calc(50%+14rem)] xl:right-[calc(50%+16rem)]"
             style={{ lineHeight: 1 }}
             
             // Initial state: Start far left (out of view)
@@ -98,9 +104,9 @@ export default function Hero() {
           </motion.h1>
           <motion.div
         // Apply all positioning and layout classes to the motion wrapper
-        className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-white text-center p-4 absolute font-serif font-medium
+        className="max-[430px]:hidden inline text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-white text-center p-4 absolute font-serif font-medium
           mt-44 sm:mt-44 md:mt-64 lg:mt-80 
-          left-[calc(50%+7rem)] sm:left-[calc(50%+8rem)] md:left-[calc(50%+14rem)] lg:left-[calc(50%+17rem)] xl:left-[calc(50%+20rem)]"
+          left-[calc(50%+7rem)] sm:left-[calc(50%+8rem)] md:left-[calc(50%+14rem)] xl:left-[calc(50%+16rem)]"
         style={{ lineHeight: 1 }}
         
         // 1. Initial state (hidden and small)
@@ -130,7 +136,7 @@ export default function Hero() {
         </div>
 
         {/* Responsive scaling for the ASCII art */}
-        <div className="absolute z-1 opacity-60 scale-50 md:scale-75 lg:scale-90">
+        <div className="absolute inset-0 z-10 opacity-60 flex items-center justify-center">
           <HeroAnimate />
         </div>
 
@@ -139,7 +145,7 @@ export default function Hero() {
         <motion.img
           src="/images/image 2.png"
           alt="Chef's Cap"
-          className="w-16 md:w-24 lg:w-32 absolute z-1 
+          className="max-[430px]:hidden block w-16 md:w-24 lg:w-32 absolute z-1 
              top-[46%] md:top-[42%] lg:top-[40%] 
              left-[calc(50%+6.5rem)] md:left-[calc(50%+12rem)] lg:left-[calc(50%+18rem)]"
           
@@ -163,7 +169,7 @@ export default function Hero() {
         <motion.img
           src="/images/image 1.png"
           alt="Chef's Cap"
-          className="w-12 md:w-24 lg:w-32 absolute z-1
+          className="max-[430px]:hidden w-12 md:w-24 lg:w-32 absolute z-1
             top-[46%] md:top-[40%] lg:top-[36%] 
             right-[calc(50%+7rem)] md:right-[calc(50%+12.5rem)] lg:right-[calc(50%+18.5rem)]"
           
