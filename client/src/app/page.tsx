@@ -1,146 +1,125 @@
-"use client";
-import MemberCard from "@/components/MemberCard";
-import { JSX } from "react";
+import Image from "next/image";
 
-interface CustomImageProps {
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-  className: string;
-}
-
-const CustomImage = ({
-  src,
-  alt,
-  width,
-  height,
-  className,
-}: CustomImageProps): JSX.Element => (
-  <img
-    src={src}
-    alt={alt}
-    className={className}
-    width={width}
-    height={height}
-    onError={(e) => {
-      const target = e.target as HTMLImageElement;
-      target.onerror = null;
-      target.src =
-        "https://placehold.co/100x100/333333/ffffff?text=Asset+Error";
-      console.error(`Error loading image from path: ${src}`);
-    }}
-  />
-);
-
-export default function AboutPage(): JSX.Element {
-  const cardStyle = "rounded-xl shadow-lg bg-white";
-
+export default async function Home() {
+  await new Promise(resolve => setTimeout(resolve, 8000));
   return (
-    <div className="relative min-h-screen bg-black text-white flex flex-col items-start overflow-hidden px-4 sm:px-6 md:px-10 py-10 md:py-14">
-      {/* Glow background */}
-      <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
-        <CustomImage
-          src="/aboutUs_Subtract.svg"
-          alt="Glow background"
-          width={1000}
-          height={500}
-          className="
-            object-center rotate-90 md:rotate-0 max-w-none
-            md:w-[70vw] md:h-[100vh] w-[70w] h-[50vh]
-            transform translate-y-[5vh] md:translate-y-0
-            scale-y-[1] scale-x-[0.7] md:scale-100  
-          "
+    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+        <Image
+          className="dark:invert"
+          src="/next.svg"
+          alt="Next.js logo"
+          width={180}
+          height={38}
+          priority
         />
-      </div>
+        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
+          <li className="mb-2 tracking-[-.01em]">
+            Get started by editing{" "}
+            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
+              src/app/page.tsx
+            </code>
+            .
+          </li>
+          <li className="tracking-[-.01em] text-gold font-cerapro font-light italic">
+            Save and see your changes instantly.
+          </li>
+        </ol>
 
-      {/* About Text */}
-      <div className="text-left mb-20 md:mb-56 z-10 md:ml-20">
-        <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 font-cerapro font-medium uppercase tracking-widest text-md sm:text-lg md:text-3xl mb-4">
-          About Us
-        </h2>
-        <h1 className="text-xs sm:text-base md:text-xl font-cerapro font-thin italic tracking-wider leading-relaxed">
-          WE ARE CODERS, ENTHUSIASTS, GEEKS.
-          <br />
-          WE ARE{" "}
-          <span className="font-bold not-italic text-gray-200">CODECHEF</span>
-        </h1>
-      </div>
-
-      {/* Card Container */}
-      <div
-        className="
-          relative max-w-5xl w-full
-          p-3 sm:p-4 md:p-6 lg:p-10
-          rounded-2xl shadow-2xl z-10
-          mx-auto
-          -translate-y-16 md:-translate-y-40
-        "
-      >
-        {/* Desktop layout */}
-        {/* Desktop layout */}
-        <div className="hidden md:grid grid-cols-[repeat(3,auto)] gap-6 lg:gap-8 place-items-center justify-center scale-100 lg:scale-120 transition-transform duration-300">
-          {/* 4 grouped cards on the left */}
-          <div className="grid grid-cols-2 gap-5 transform -translate-x-10">
-            <MemberCard className={`${cardStyle} w-56 h-56 lg:w-64 lg:h-64`} />
-            <MemberCard className={`${cardStyle} w-56 h-56 lg:w-64 lg:h-64`} />
-            <MemberCard className={`${cardStyle} w-56 h-56 lg:w-64 lg:h-64`} />
-            <MemberCard className={`${cardStyle} w-56 h-56 lg:w-64 lg:h-64`} />
-          </div>
-
-          {/* Single larger card on the right */}
-          <div className="flex justify-center items-center translate-x-8">
-            <MemberCard className="w-80 h-96 lg:w-96 lg:h-[26rem] scale-x-140 scale-y-120" />
-          </div>
+        <div className="flex gap-4 items-center flex-col sm:flex-row">
+          <a
+            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
+            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              className="dark:invert"
+              src="/vercel.svg"
+              alt="Vercel logomark"
+              width={20}
+              height={20}
+            />
+            Deploy now
+          </a>
+          <a
+            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
+            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read our docs
+          </a>
         </div>
-
-        {/* Mobile layout */}
-        <div className="grid grid-cols-2 md:hidden sm:gap-3 justify-items-center translate-y-1">
-          {" "}
-          <div className="col-start-1">
-            {" "}
-            <MemberCard />{" "}
-          </div>{" "}
-          <div className="col-start-2 row-start-2">
-            {" "}
-            <MemberCard />{" "}
-          </div>{" "}
-          <div className="col-start-1 row-start-3">
-            {" "}
-            <MemberCard />{" "}
-          </div>{" "}
-          <div className="col-start-2 row-start-4">
-            {" "}
-            <MemberCard />{" "}
-          </div>{" "}
-        </div>
-      </div>
-"use server";
-
-import Navbar from "@/components/Navbar";
-import Button from "@/components/Button";
-import SectionHeader from "@/components/SectionHeader";
-import Hero from "@/components/sections/Hero";
-import AboutPage from "@/components/sections/AboutUsSection";
-import CountdownSection from "@/components/sections/CountdownSection";
-import PrizesSection from "@/components/sections/PrizesSection";
-import SponsorsSection from "@/components/sections/SponsorsSection";
-import FaqSection from "@/components/sections/FaqSection";
-
-
-export default async function page() {
-  
-  return (
-    <div className="min-h-screen bg-[#121212] text-foreground">
-      <Navbar />
-      <Hero/>
-      <AboutPage></AboutPage>
-      <CountdownSection></CountdownSection>
-      <PrizesSection></PrizesSection>
-      <SponsorsSection></SponsorsSection>
-      <FaqSection></FaqSection>
+      </main>
+      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+        <a
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            aria-hidden
+            src="/file.svg"
+            alt="File icon"
+            width={16}
+            height={16}
+          />
+          Learn
+        </a>
+        <a
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            aria-hidden
+            src="/window.svg"
+            alt="Window icon"
+            width={16}
+            height={16}
+          />
+          Examples
+        </a>
+        <a
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            aria-hidden
+            src="/globe.svg"
+            alt="Globe icon"
+            width={16}
+            height={16}
+          />
+          Go to nextjs.org →
+        </a>
+      </footer>
     </div>
     
   );
 }
-}
+
+// "use client";
+
+// import Navbar from "@/components/Navbar";
+// import Button from "@/components/Button";
+// import SectionHeader from "@/components/SectionHeader";
+// export default function Home() {
+//   return (
+//     <div className="min-h-screen bg-background text-foreground">
+//       <Navbar />
+//       <Button href="https://eventhubcc.vit.ac.in/EventHub/login" external>
+//   REGISTER
+//       </Button>
+//       <SectionHeader>FAQ'S</SectionHeader>
+//       <SectionHeader align="left">COUNTDOWN</SectionHeader>
+//       <SectionHeader subtitle="Learn more about our chapter">ABOUT US</SectionHeader>
+//     </div>
+    
+//   );
+// }
