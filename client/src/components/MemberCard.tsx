@@ -1,10 +1,14 @@
 "use client";
 
+import { JSX } from "react";
+
 interface MemberCardProps {
   className?: string;
 }
 
-export default function MemberCard({ className = "" }: MemberCardProps) {
+export default function MemberCard({
+  className = "",
+}: MemberCardProps): JSX.Element {
   return (
     <div
       className={`bg-white rounded-xl shadow-lg flex flex-col items-center justify-center 
