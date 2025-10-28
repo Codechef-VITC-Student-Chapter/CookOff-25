@@ -57,6 +57,8 @@ export default function AboutPage(): JSX.Element {
       {/* About Text */}
       <div className="text-left mb-20 md:mb-56 z-10 md:ml-20">
         <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 font-cerapro font-medium uppercase tracking-widest text-md sm:text-lg md:text-3xl mb-4">
+      <div className="text-left mb-20 md:mb-40">
+        <h2 className="text-transparent bg-clip-text bg-linear-to-r from-white to-gray-400 font-cerapro font-medium uppercase tracking-widest text-md md:text-4xl mb-6 md:mb-6 translate-x-0 md:translate-x-15/100">
           About Us
         </h2>
         <h1 className="text-xs sm:text-base md:text-xl font-cerapro font-thin italic tracking-wider leading-relaxed">
