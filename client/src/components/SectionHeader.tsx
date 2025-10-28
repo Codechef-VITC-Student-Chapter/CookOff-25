@@ -21,7 +21,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
 
   return (
     <div className={`mb-12 ${alignmentStyles[align]} ${className}`}>
-      <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-wider mb-4">
+      <h2 className="text-4xl md:text-5xl font-cerapro font-medium lg:text-6xl  text-white tracking-wider mb-4">
         {children}
       </h2>
       {subtitle && (
