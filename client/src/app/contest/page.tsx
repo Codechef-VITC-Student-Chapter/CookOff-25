@@ -1,8 +1,9 @@
 "use client";
-
+import Navbar from "@/components/Navbar";
 export default function ContestPage() {
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col items-center pt-20 px-4">
+    <div className="min-h-screen bg-[#121212] text-white flex flex-col items-center pt-20 px-4">
+      <Navbar></Navbar>
       {/* Round 1 */}
       <div className="w-full max-w-3xl bg-gray-300 mb-4 md:mb-6">
         <h2 className="font-cerapro font-black text-lg md:text-xl text-black px-6 md:px-16 py-2 md:py-3">

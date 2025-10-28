@@ -72,7 +72,7 @@ const LeaderboardPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-[#121212] overflow-hidden text-white">
       {/* Navbar at the top */}
       <Navbar />
 
@@ -80,7 +80,7 @@ const LeaderboardPage: React.FC = () => {
       <div className="py-16 px-4 max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-5xl md:text-7xl font-cerapro font-bold mb-4 tracking-wider">
+          <h1 className="text-5xl md:text-7xl font-cerapro font-bold mb-4 mt-10 tracking-wider">
             LEADERBOARD
           </h1>
           <h2 className="text-3xl md:text-4xl font-cerapro font-semibold tracking-wide">

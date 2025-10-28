@@ -6,7 +6,7 @@ const PrizesSection = () => {
     return (
         <div className="bg-[#121212] relative overflow-hidden">
 
-            <h3 className="font-cerapro font-medium uppercase ml-20 tracking-widest sm:max-md:text-center  text-3xl bg-gradient-to-r from-white to-gray-400 mt-20 bg-clip-text text-transparent">PRIZES</h3>
+            <h3 className="font-cerapro font-medium uppercase ml-20 tracking-widest sm:max-md:text-center  text-3xl bg-linear-to-r from-white to-gray-400 mt-20 bg-clip-text text-transparent">PRIZES</h3>
 
             {/* PRIZE CONTAINER */}
             <div className="flex flex-col md:flex-row md:justify-around items-center gap-10 relative z-20">
