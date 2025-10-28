@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import Navbar from "../Navbar";
+// import Navbar from "../Navbar";
 import FaqAccordion from "../FaqAccordion";
-import SectionHeader from "../SectionHeader";
+// import SectionHeader from "../SectionHeader";
 
 type FaqItem = {
     ques: string;
@@ -31,7 +31,7 @@ const FaqSection: React.FC = () => {
 
             <div>
 
-                <h3 className="font-cerapro font-medium uppercase ml-20 tracking-widest  text-3xl bg-gradient-to-r from-white to-gray-400 mb-20 mt-20  text-transparent bg-clip-text sm:max-md:text-center ">FAQ'S</h3>
+                <h3 className="font-cerapro font-medium uppercase ml-20 tracking-widest  text-3xl bg-gradient-to-r from-white to-gray-400 mb-20 mt-20  text-transparent bg-clip-text sm:max-md:text-center ">FAQ&apos;S</h3>
 
 
                 <div className="flex flex-col items-center gap-5">
