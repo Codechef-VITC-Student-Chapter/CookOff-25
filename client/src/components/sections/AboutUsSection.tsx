@@ -8,6 +8,7 @@ export default function AboutPage() {
 
   return (
     <div className="relative min-h-screen bg-black text-white flex flex-col items-start overflow-hidden px-4 sm:px-6 md:px-10 py-10 md:py-14">
+    <div className="relative min-h-screen bg-[#121212] text-white flex flex-col items-left overflow-hidden px-6 md:px-6 py-10 md:py-14">
       {/* Glowing background */}
       <div className="absolute inset-0 flex justify-center items-center opacity-100 pointer-events-none translate-y-8 md:translate-y-0">
         <Image
@@ -33,6 +34,8 @@ export default function AboutPage() {
       {/* Text Section */}
       <div className="text-left mb-20 md:mb-56 z-10 md:ml-20">
         <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 font-cerapro font-medium uppercase tracking-widest text-md sm:text-lg md:text-3xl mb-4">
+      <div className="text-left mb-20 md:mb-40">
+        <h2 className="text-transparent bg-clip-text bg-linear-to-r from-white to-gray-400 font-cerapro font-medium uppercase tracking-widest text-md md:text-4xl mb-6 md:mb-6 translate-x-0 md:translate-x-15/100">
           About Us
         </h2>
         <h1 className="text-xs sm:text-base md:text-xl font-cerapro font-thin italic tracking-wider leading-relaxed">
