@@ -41,7 +41,7 @@ const SponsorsSection = () => {
         <h3 className="font-cerapro font-medium uppercase ml-20 tracking-widest sm:max-md:text-center text-3xl bg-linear-to-r from-white to-gray-400 bg-clip-text text-transparent">SPONSORS</h3>
 
         {/* Line separator */}
-        <div className="w-full h-2 mt-10 relative block top-[450px] md:hidden  bg-linear-to-r from-[#999999] via-[#FFFFFF] to-[#999999]">
+        <div className="w-full h-2 mt-10 relative block top-[388px] md:top-[392px] md:hidden  bg-linear-to-r from-[#999999] via-[#FFFFFF] to-[#999999]">
         </div>
         <div className="w-full h-2 mt-10 top-2 relative  bg-linear-to-r from-[#999999] via-[#FFFFFF] to-[#999999]">
         </div>

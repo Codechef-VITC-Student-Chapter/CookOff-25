@@ -15,8 +15,8 @@ export default function Hero() {
         for all the `absolute` elements inside.
       */}
       <div className="h-[120vh] w-full flex flex-col items-center justify-center  lg:mt-10 py-7  overflow-hidden  relative">
-        <div className="h-screen w-full flex flex-col items-center justify-center overflow-hidden relative max-[430px]:h-auto">
-          <div className="flex flex-col items-center justify-center p-5 relative">
+        <div className="h-screen w-full flex flex-col items-center justify-center overflow-hidden relative">
+          <div className="flex flex-col items-center justify-center p-5  relative">
             {/* Responsive text size and tracking */}
             <motion.h1
               className="text-xl md:text-3xl max-[430px]:text-sm text-white text-center p-4 font-cerapro font-medium tracking-widest md:tracking-[0.5rem]"
@@ -129,7 +129,7 @@ export default function Hero() {
         </div>
 
         {/* Responsive scaling for the ASCII art */}
-        <div className="absolute inset-0 z-10 opacity-60 flex items-center justify-center">
+        <div className="absolute inset-0  z-10 opacity-60 flex items-center justify-center">
           <HeroAnimate />
         </div>
 

@@ -9,14 +9,14 @@ const PrizesSection = () => {
             <h3 className="font-cerapro font-medium uppercase ml-20 tracking-widest sm:max-md:text-center  text-3xl bg-linear-to-r from-white to-gray-400 mt-20 bg-clip-text text-transparent">PRIZES</h3>
 
             {/* PRIZE CONTAINER */}
-            <div className="flex flex-col md:flex-row md:justify-around items-center gap-10 relative z-20">
+            <div className="flex flex-col md:flex-row md:justify-around  items-center relative z-20">
 
                 {/* Gold Prize Stack - Order 1 on mobile, Order 2 on desktop */}
                 <div className="flex flex-col items-center order-1 md:order-2">
                     <Image
                         src="/PrizeSection_goldhead.svg"
                         alt="goldhead"
-                        className="relative w-full mt-20 max-w-[300px] h-auto -top-4"
+                        className="relative w-full mt-20 max-w-[210px] h-auto -top-4"
                         width={300}
                         height={200}
                     />
@@ -35,7 +35,7 @@ const PrizesSection = () => {
                         <Image
                             src="/PrizeSection_goldbase.svg"
                             alt="goldbase"
-                            className="relative w-full max-w-[300px] h-auto -top-20"
+                            className="relative w-full max-w-[230px]  -top-20"
                             width={300}
                             height={200}
                         />
@@ -47,7 +47,7 @@ const PrizesSection = () => {
                     <Image
                         src="/PrizeSection_silverhead.svg"
                         alt="silverhead"
-                        className="relative w-full max-w-[280px] h-auto -top-2"
+                        className="relative w-full max-w-[250px] h-auto -left-7 -top-2"
                         width={300}
                         height={200}
                     />
@@ -66,7 +66,7 @@ const PrizesSection = () => {
                         <Image
                             src="/PrizeSection_silverbase.svg"
                             alt="silverbase"
-                            className="relative w-full max-w-[280px] h-auto -top-16"
+                            className="relative w-full max-w-[250px] h-auto -top-16"
                             width={300}
                             height={200}
                         />
@@ -78,7 +78,7 @@ const PrizesSection = () => {
                     <Image
                         src="/PrizeSection_bronzehead.svg"
                         alt="bronzehead"
-                        className="relative w-full max-w-[280px] h-auto -top-2"
+                        className="relative w-full max-w-[250px] h-auto -top-2 -right-6"
                         width={300}
                         height={200}
                     />
@@ -97,7 +97,7 @@ const PrizesSection = () => {
                         <Image
                             src="/PrizeSection_bronzebase.svg"
                             alt="bronzebase"
-                            className="relative w-full max-w-[280px] h-auto"
+                            className="relative w-full max-w-[250px] h-auto"
                             width={300}
                             height={200}
                         />

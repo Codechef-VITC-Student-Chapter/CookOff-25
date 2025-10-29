@@ -12,8 +12,9 @@ export default function MemberCard({
   return (
     <div
       className={`bg-white rounded-xl shadow-lg flex flex-col items-center justify-center 
-        text-black hover:scale-105 transition-transform duration-300
-        w-[120px] h-[100px] sm:w-[140px] sm:h-[110px] md:w-[160px] md:h-[130px] lg:w-[190px] lg:h-[150px]
+        text-black hover:scale-105 transition-transform duration-300 cursor-pointer
+        flex-shrink-0 flex-grow-0
+        w-[150px] h-[120px] sm:w-[140px] sm:h-[110px] md:w-[160px] md:h-[130px] lg:w-[190px] lg:h-[150px]
         ${className}`}
     >
       <h3 className="font-semibold text-xs sm:text-sm md:text-base lg:text-lg mb-1">

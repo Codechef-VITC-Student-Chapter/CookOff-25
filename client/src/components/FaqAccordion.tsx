@@ -31,14 +31,15 @@ const FaqAccordion: React.FC<FaqAccordionProps> = ({ ques, ans }) => {
           }`}
         />
       </div>
+ 
 
       {/* Answer dropdown */}
       <div
-        className={`overflow-hidden transition-all duration-300 border-l-1 bg-[#999999] text-black border-r-1 border-b-1 border-[#999999] ${
+        className={`overflow-hidden transition-all duration-300 border-l bg-[#999999] text-black border-r border-b border-[#999999] ${
           isOpen ? "max-h-60 p-4" : "max-h-0 p-0"
         }`}
       >
-        <p className="break-words font-cerapro font-medium mb-3">{ans}</p>
+        <p className="wrap-break-words font-cerapro font-medium mb-3">{ans}</p>
       </div>
     </div>
   );

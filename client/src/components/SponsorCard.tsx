@@ -19,14 +19,14 @@ const SponsorCard: React.FC<SponsorCardProps> = ({
       <div className="relative bg-transparent">
         
         {/* Strap */}
-        <div className="w-2 sm:w-3 h-8 sm:h-10 bg-white mx-auto 
+        <div className="w-2 sm:w-3 h-8  bg-white mx-auto 
         border-2 border-t-0 border-b-0 border-black relative top-2 z-10" />
 
         {/* Card */}
         <div
           className={`mt-1 bg-white 
-          w-34 sm:w-45 lg:w-58 
-          h-66 sm:h-80 md:h-94
+          w-34 md:w-43 lg:w-58 
+          h-66  md:h-94
           border-2 border-black 
           shadow-[13px_10px_19px_2px_rgba(255,255,255,0.75)]
           relative flex flex-col items-center`}
