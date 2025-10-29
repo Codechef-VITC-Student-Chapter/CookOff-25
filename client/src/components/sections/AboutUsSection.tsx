@@ -1,5 +1,6 @@
 "use client";
 import MemberCard from "@/components/MemberCard";
+import Image from "next/image";
 import { JSX } from "react";
 
 interface CustomImageProps {
@@ -47,16 +48,17 @@ export default function AboutPage(): JSX.Element {
           height={500}
           className="
             object-center rotate-90 md:rotate-0 max-w-none
-            md:w-[70vw] md:h-[100vh] w-[70w] h-[50vh]
+            md:w-[80vw] md:h-screen w-[70w] h-[50vh]
             transform translate-y-[5vh] md:translate-y-0
             scale-y-[1] scale-x-[0.7] md:scale-100  
           "
         />
+       
       </div>
 
       {/* About Text */}
       <div className="text-left mb-20 md:mb-56 z-10 md:ml-20">
-        <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 font-cerapro font-medium uppercase tracking-widest text-md sm:text-lg md:text-3xl mb-4">
+        <h2 className="text-transparent bg-clip-text bg-linear-to-r from-white to-gray-400 font-cerapro font-medium uppercase tracking-widest text-md sm:text-lg md:text-3xl mb-4">
           About Us
         </h2>
         <h1 className="text-xs sm:text-base md:text-xl font-cerapro font-thin italic tracking-wider leading-relaxed">
@@ -67,6 +69,9 @@ export default function AboutPage(): JSX.Element {
         </h1>
       </div>
 
+      <div className="flex w-full justify-end">
+
+      </div>
       {/* Card Container */}
       <div
         className="
@@ -90,7 +95,7 @@ export default function AboutPage(): JSX.Element {
 
           {/* Single larger card on the right */}
           <div className="flex justify-center items-center translate-x-8">
-            <MemberCard className="w-80 h-96 lg:w-96 lg:h-[26rem] scale-x-140 scale-y-120" />
+            <MemberCard className="w-88 h-96 lg:w-100 lg:h-108 scale-x-140 scale-y-120" />
           </div>
         </div>
 
