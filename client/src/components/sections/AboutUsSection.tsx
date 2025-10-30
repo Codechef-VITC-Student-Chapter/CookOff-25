@@ -38,7 +38,7 @@ export default function AboutPage(): JSX.Element {
   const cardStyle = "rounded-xl shadow-lg bg-white";
 
   return (
-    <div className="relative min-h-screen bg-black text-white flex flex-col items-start overflow-hidden px-4 sm:px-6 md:px-10 py-10 md:py-14">
+    <div className="relative min-h-screen bg-[#121212] text-white flex flex-col items-start overflow-hidden px-4 sm:px-6 md:px-10 py-10 md:py-14">
       {/* Glow background */}
       <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
         <CustomImage

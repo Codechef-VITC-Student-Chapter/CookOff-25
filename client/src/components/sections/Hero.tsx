@@ -8,7 +8,6 @@ export default function Hero() {
   const hatDelay = 2.5;
   const numberDelay = hatDelay + 1.8;
   const baseDelay = 5;
-
   return (
     <>
       {/* Added `relative` here to act as the positioning context 

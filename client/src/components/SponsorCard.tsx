@@ -46,14 +46,14 @@ const SponsorCard: React.FC<SponsorCardProps> = ({
               alt={`${sponsorName} logo`}
               width={120}
               height={120}
-              className="object-contain w-[60%] sm:w-[70%] md:w-[75%]"
+              className="object-fill  w-[80%] sm:w-[70%] md:w-[75%]"
             />
           </div>
 
           {/* Sponsor Name */}
           <p className="text-center font-semibold pb-4 
           text-gray-800 uppercase tracking-wide
-          text-sm sm:text-base md:text-lg">
+          text-base ">
             {sponsorName}
           </p>
         </div>

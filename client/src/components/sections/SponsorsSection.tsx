@@ -10,26 +10,26 @@ const SponsorsSection = () => {
   const sponsors = [
     {
       id: 1,
-      sponsorName: "Sample One",
-      logoUrl: "",
+      sponsorName: "CESTRUM",
+      logoUrl: "/Sponsor_Cestrum.jpg",
       tier: "gold" as const,
     },
     {
       id: 2,
-      sponsorName: "Sample Two",
-      logoUrl: "",
+      sponsorName: "CITTAA",
+      logoUrl: "/Sponsor_Cittaa.png",
       tier: "silver" as const,
     },
     {
       id: 3,
-      sponsorName: "Sample Three",
-      logoUrl: "",
+      sponsorName: "GRAB ON",
+      logoUrl: "/Sponsor_GrabOn.jpg",
       tier: "bronze" as const,
     },
     {
       id: 4,
-      sponsorName: "Sample Four",
-      logoUrl: "",
+      sponsorName: "MGM HEALTHCARE",
+      logoUrl: "/Sponsor_Mgm.png",
       tier: "bronze" as const,
     }
   ];
