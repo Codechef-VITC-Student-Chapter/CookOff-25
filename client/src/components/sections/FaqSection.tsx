@@ -27,11 +27,11 @@ const faqs: FaqItem[] = [
 
 const FaqSection: React.FC = () => {
     return (
-        <div className="pb-20 bg-[#121212]">
+        <div className="pb-20 bg-black">
 
             <div>
 
-                <h3 className="font-cerapro font-medium uppercase ml-20 tracking-widest  text-3xl bg-gradient-to-r from-white to-gray-400 mb-20 mt-20  text-transparent bg-clip-text sm:max-md:text-center ">FAQ&apos;S</h3>
+                <h3 className="font-cerapro font-medium uppercase ml-20 tracking-widest  text-3xl bg-linear-to-r from-white to-gray-400 mb-20 mt-20  text-transparent bg-clip-text sm:max-md:text-center ">FAQ</h3>
 
 
                 <div className="flex flex-col items-center gap-5">
