@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar"; // import the Navbar
+import { client } from "@/lib/sanityClient";
 
 interface LeaderboardEntry {
   id: string;
@@ -11,13 +12,116 @@ interface LeaderboardEntry {
   teamType: "Solo" | "Team";
   rank?: number;
 }
+type Club = {
+  _id: string;
+  TeamName: string;
+  College: string;
+  Round1: number;
+  Round2: number;
+  Round3: number;
+  totalPoints: number;
+};
+const query = `*[_type == "Clubs"]{
+  _id,
+  TeamName,
+  College,
+  Round1,
+  Round2,
+  Round3,
+  totalPoints
+}`;
+function isClub(doc: any): doc is Club {
+  return (
+    doc &&
+    typeof doc._id === "string" &&
+    typeof doc.TeamName === "string" &&
+    typeof doc.College === "string" &&
+    typeof doc.Round1 === "number" &&
+    typeof doc.Round2 === "number" &&
+    typeof doc.Round3 === "number" &&
+    typeof doc.totalPoints === "number"
+  );
+}
+
 
 const LeaderboardPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>("Round 1");
   const [leaderboardData, setLeaderboardData] = useState<LeaderboardEntry[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-
+  const [clubs, setClubs] = useState<Club[]>([]);
   const tabs = ["Round 1", "Round 2", "Round 3"];
+  
+
+  useEffect(() => {
+      let isMounted = true;
+
+      // 🔧 Transform + Sort raw club data into leaderboard format
+      const transformToLeaderboardEntries = (clubs: Club[]): LeaderboardEntry[] => {
+        const rounds = ["Round1", "Round2", "Round3"] as const;
+
+        // For each round, sort descending by score
+        const sortedEntries = rounds.flatMap((round) => {
+          const sortedClubs = [...clubs].sort(
+            (a, b) => (b[round] ?? 0) - (a[round] ?? 0)
+          );
+
+          return sortedClubs.map((club) => ({
+            id: `${club._id}-${round}`,
+            name: club.TeamName,
+            score: club[round] ?? 0,
+            round: round.replace("Round", "Round "), // "Round1" → "Round 1"
+          }));
+        });
+
+        return sortedEntries;
+      };
+
+      // 🟢 Initial fetch
+      client.fetch<Club[]>(query).then((data) => {
+        if (isMounted) {
+          setClubs(data);
+          setLeaderboardData(transformToLeaderboardEntries(data)); // sorted
+        }
+      });
+
+      // 🔴 Live updates
+      const subscription = client.listen(query).subscribe((update) => {
+        const { result, transition, documentId } = update;
+
+        setClubs((prev) => {
+          let updatedClubs = [...prev];
+
+          if (transition === "disappear") {
+            updatedClubs = updatedClubs.filter((c) => c._id !== documentId);
+          } else if (result && isClub(result)) {
+            const updated = result;
+            const exists = updatedClubs.some((c) => c._id === updated._id);
+
+            if (exists) {
+              updatedClubs = updatedClubs.map((c) =>
+                c._id === updated._id ? updated : c
+              );
+            } else {
+              updatedClubs.push(updated);
+            }
+          }
+
+          // 🔁 Update frontend leaderboard with sorted data
+          setLeaderboardData(transformToLeaderboardEntries(updatedClubs));
+
+          return updatedClubs;
+        });
+      });
+
+      // 🧹 Cleanup
+      return () => {
+        isMounted = false;
+        subscription.unsubscribe();
+        setLoading(false);
+      };
+    }, []);
+
+
 
   useEffect(() => {
     const fetchLeaderboardData = async () => {
