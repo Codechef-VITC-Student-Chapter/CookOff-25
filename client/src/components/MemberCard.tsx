@@ -4,24 +4,23 @@ import { JSX } from "react";
 
 interface MemberCardProps {
   className?: string;
+  text?:string
 }
 
 export default function MemberCard({
   className = "",
+  text
 }: MemberCardProps): JSX.Element {
   return (
     <div
       className={`bg-white rounded-xl shadow-lg flex flex-col items-center justify-center 
         text-black hover:scale-105 transition-transform duration-300 cursor-pointer
-        flex-shrink-0 flex-grow-0
-        w-[150px] h-[120px] sm:w-[140px] sm:h-[110px] md:w-[160px] md:h-[130px] lg:w-[190px] lg:h-[150px]
+        shrink-0 grow-0
+        w-[150px] h-[120px] sm:w-[140px] sm:h-[110px] md:w-44 md:h-[130px] lg:w-[190px] lg:h-[150px]
         ${className}`}
     >
-      <h3 className="font-semibold text-xs sm:text-sm md:text-base lg:text-lg mb-1">
-        CodeChef
-      </h3>
-      <p className="text-[10px] sm:text-xs md:text-sm lg:text-base text-gray-600">
-        Cook Off
+      <p className="text-[10px] px-2 sm:text-xs  text-black">
+        {text}
       </p>
     </div>
   );

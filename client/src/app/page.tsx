@@ -12,7 +12,7 @@ import FaqSection from "@/components/sections/FaqSection";
 
 export default async function Page() {
   return (
-    <div className="min-h-screen bg-[#121212] text-foreground">
+    <div className="min-h-screen bg-black text-foreground">
       <Navbar />
       <Hero />
       <AboutPage />

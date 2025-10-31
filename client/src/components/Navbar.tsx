@@ -44,7 +44,7 @@ const Navbar: React.FC = () => {
   return (
     <>
       {/* Top Navbar */}
-      <nav className="bg-[#1a1a1a] border-b border-gray-800 w-full fixed z-60 top-0 font-cera ">
+      <nav className="bg-black border-b border-gray-800 w-full fixed z-60 top-0 font-cera ">
         <div className="w-full flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
           {/* Logo */}
           <Link
