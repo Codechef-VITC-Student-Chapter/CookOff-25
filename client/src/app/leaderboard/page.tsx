@@ -3,38 +3,42 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar"; // import the Navbar
 import { client } from "@/lib/sanityClient";
+import { getTopTeamsByRound } from "./getTopTeamsByRound";
+import Podium from "./Podium";
 
 interface LeaderboardEntry {
   id: string;
   name: string;
   score: number;
   round: string;
-  teamType: "Solo" | "Team";
+  teamType: "solo" | "team";
   rank?: number;
 }
 type Club = {
   _id: string;
-  TeamName: string;
+  teamName: string;
   College: string;
   Round1: number;
   Round2: number;
   Round3: number;
   totalPoints: number;
+  teamType: "solo" | "team";
 };
 const query = `*[_type == "Clubs"]{
   _id,
-  TeamName,
+  teamName,
   College,
   Round1,
   Round2,
   Round3,
-  totalPoints
+  totalPoints,
+  teamType
 }`;
 function isClub(doc: any): doc is Club {
   return (
     doc &&
     typeof doc._id === "string" &&
-    typeof doc.TeamName === "string" &&
+    typeof doc.teamName === "string" &&
     typeof doc.College === "string" &&
     typeof doc.Round1 === "number" &&
     typeof doc.Round2 === "number" &&
@@ -45,16 +49,16 @@ function isClub(doc: any): doc is Club {
 
 
 const LeaderboardPage: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<string>("Round 1");
+  const [activeTab, setActiveTab] = useState<string>("Round1");
   const [leaderboardData, setLeaderboardData] = useState<LeaderboardEntry[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [clubs, setClubs] = useState<Club[]>([]);
-  const tabs = ["Round 1", "Round 2", "Round 3"];
-  
+  const tabs = ["Round1", "Round2", "Round3"];
+  const [topsTeamsByRound, setTopTeamsByRound] = useState<ReturnType<typeof getTopTeamsByRound> | null>(null);
 
   useEffect(() => {
       let isMounted = true;
-
+      
       // 🔧 Transform + Sort raw club data into leaderboard format
       const transformToLeaderboardEntries = (clubs: Club[]): LeaderboardEntry[] => {
         const rounds = ["Round1", "Round2", "Round3"] as const;
@@ -67,9 +71,10 @@ const LeaderboardPage: React.FC = () => {
 
           return sortedClubs.map((club) => ({
             id: `${club._id}-${round}`,
-            name: club.TeamName,
+            name: club.teamName,
             score: club[round] ?? 0,
-            round: round.replace("Round", "Round "), // "Round1" → "Round 1"
+            teamType: club.teamType,
+            round: round
           }));
         });
 
@@ -81,6 +86,8 @@ const LeaderboardPage: React.FC = () => {
         if (isMounted) {
           setClubs(data);
           setLeaderboardData(transformToLeaderboardEntries(data)); // sorted
+          setTopTeamsByRound(getTopTeamsByRound(data));
+          
         }
       });
 
@@ -108,7 +115,7 @@ const LeaderboardPage: React.FC = () => {
 
           // 🔁 Update frontend leaderboard with sorted data
           setLeaderboardData(transformToLeaderboardEntries(updatedClubs));
-
+          
           return updatedClubs;
         });
       });
@@ -122,29 +129,28 @@ const LeaderboardPage: React.FC = () => {
     }, []);
 
 
-
   useEffect(() => {
     const fetchLeaderboardData = async () => {
       try {
         setLoading(true);
         const mockData: LeaderboardEntry[] = [
-          { id: "1", name: "CodeChef", score: 950, round: "Round 1", teamType: "Solo" },
-          { id: "2", name: "CodeChef", score: 920, round: "Round 1", teamType: "Team" },
-          { id: "3", name: "CodeChef", score: 890, round: "Round 1", teamType: "Team" },
-          { id: "4", name: "CodeChef", score: 870, round: "Round 1", teamType: "Solo" },
-          { id: "5", name: "CodeChef", score: 850, round: "Round 1", teamType: "Team" },
+          { id: "1", name: "CodeChef", score: 950, round: "Round 1", teamType: "solo" },
+          { id: "2", name: "CodeChef", score: 920, round: "Round 1", teamType: "team" },
+          { id: "3", name: "CodeChef", score: 890, round: "Round 1", teamType: "team" },
+          { id: "4", name: "CodeChef", score: 870, round: "Round 1", teamType: "solo" },
+          { id: "5", name: "CodeChef", score: 850, round: "Round 1", teamType: "team" },
 
-          { id: "6", name: "CodeChef", score: 980, round: "Round 2", teamType: "Solo" },
-          { id: "7", name: "CodeChef", score: 940, round: "Round 2", teamType: "Team" },
-          { id: "8", name: "CodeChef", score: 910, round: "Round 2", teamType: "Team" },
-          { id: "9", name: "CodeChef", score: 870, round: "Round 2", teamType: "Solo" },
-          { id: "10", name: "CodeChef", score: 860, round: "Round 2", teamType: "Team" },
+          { id: "6", name: "CodeChef", score: 980, round: "Round 2", teamType: "solo" },
+          { id: "7", name: "CodeChef", score: 940, round: "Round 2", teamType: "team" },
+          { id: "8", name: "CodeChef", score: 910, round: "Round 2", teamType: "team" },
+          { id: "9", name: "CodeChef", score: 870, round: "Round 2", teamType: "solo" },
+          { id: "10", name: "CodeChef", score: 860, round: "Round 2", teamType: "team" },
 
-          { id: "11", name: "CodeChef", score: 995, round: "Round 3", teamType: "Solo" },
-          { id: "12", name: "CodeChef", score: 960, round: "Round 3", teamType: "Team" },
-          { id: "13", name: "CodeChef", score: 940, round: "Round 3", teamType: "Team" },
-          { id: "14", name: "CodeChef", score: 900, round: "Round 3", teamType: "Team" },
-          { id: "15", name: "CodeChef", score: 880, round: "Round 3", teamType: "Solo" },
+          { id: "11", name: "CodeChef", score: 995, round: "Round 3", teamType: "solo" },
+          { id: "12", name: "CodeChef", score: 960, round: "Round 3", teamType: "team" },
+          { id: "13", name: "CodeChef", score: 940, round: "Round 3", teamType: "team" },
+          { id: "14", name: "CodeChef", score: 900, round: "Round 3", teamType: "team" },
+          { id: "15", name: "CodeChef", score: 880, round: "Round 3", teamType: "solo" },
         ];
         setLeaderboardData(mockData);
         setLoading(false);
@@ -169,9 +175,9 @@ const LeaderboardPage: React.FC = () => {
     "/silver_leaderboard.png",
     "/bronzeHat_leaderboard.png",
   ];
-
+console.log(topsTeamsByRound);
   return (
-    <div className="min-h-screen bg-[#121212] overflow-hidden text-white">
+    <div className="min-h-screen bg-[#121212] overflow-hidden text-white pt-[6vh]">
       <Navbar />
 
       <div className="py-10 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto">
@@ -189,6 +195,8 @@ const LeaderboardPage: React.FC = () => {
           <div className="text-center text-gray-400 py-20 text-lg">Loading...</div>
         ) : (
           <>
+          <Podium topTeamsByRound={topsTeamsByRound} selectedRound={activeTab} />
+
             {/* Leaderboard Container */}
             <div
               className="max-w-4xl mx-auto rounded-3xl p-4 sm:p-8"
@@ -223,9 +231,9 @@ const LeaderboardPage: React.FC = () => {
                     style={{
                       width: `calc(100% / ${tabs.length})`,
                       left:
-                        activeTab === "Round 1"
+                        activeTab === "Round1"
                           ? "0%"
-                          : activeTab === "Round 2"
+                          : activeTab === "Round2"
                           ? "33.3333%"
                           : "66.6666%",
                     }}
@@ -257,7 +265,7 @@ const LeaderboardPage: React.FC = () => {
                       </span>
                     </div>
 
-                    {/*  Team Type + Score */}
+                    {/*  team Type + Score */}
                     <div className="flex items-center justify-between sm:justify-end w-full sm:w-1/2 mt-2 sm:mt-0">
                       <div className="text-gray-700 font-semibold text-sm sm:text-base text-left sm:text-center w-1/2 sm:w-1/3">
                         {entry.teamType}

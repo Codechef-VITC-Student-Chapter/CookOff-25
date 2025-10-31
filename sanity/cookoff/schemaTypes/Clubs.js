@@ -5,14 +5,14 @@ const Clubs = {
   title: 'LeaderBoard',
   type: 'document',
   initialValue: {
-    SoloTeam: 'solo',
+    teamType: 'solo',
     Round1: 0,
     Round2: 0,
     Round3: 0,
   },
   fields: [
     {
-      name: 'TeamName',
+      name: 'teamName',
       title: 'Team Name',
       type: 'string',
     },
@@ -25,7 +25,7 @@ const Clubs = {
       type: 'string',
     },
     {
-      name: 'SoloTeam',
+      name: 'teamType',
       title: 'Solo or Team',
       type: 'string',
       validation: (Rule) => Rule.required(),
@@ -51,7 +51,7 @@ const Clubs = {
           ],
         },
       ],
-      hidden: ({ parent }) => parent?.SoloTeam === 'solo',
+      hidden: ({ parent }) => parent?.teamType === 'solo',
     },
     {
       name: 'Round1',
