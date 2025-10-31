@@ -4,7 +4,7 @@ import CountdownTimer from "@/components/Countdown"; // adjust path if needed
 
 export default function CountdownSection() {
   return (
-    <section className="relative min-h-screen bg-[#121212] text-white flex flex-col items-center overflow-hidden px-6 py-16">
+    <section className="relative max-h-screen md:min-h-screen bg-black text-white flex flex-col items-center overflow-hidden px-6 py-16">
       {/* Clock background PNG */}
       <div className="absolute bottom-0 right-0 opacity-100 w-[200px] h-[200px] md:w-[400px] md:h-[400px]">
         <Image
@@ -24,7 +24,7 @@ export default function CountdownSection() {
         <div className="h-[1px] opacity-100 w-full mx-auto border-2 border-gray-400" />
       </div>
 
-      <h3 className="font-cerapro font-medium uppercase tracking-widest text-xl md:text-3xl bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent mb-10 md:mb-0">
+      <h3 className="font-cerapro font-medium uppercase tracking-widest text-xl md:text-3xl bg-linear-to-r from-white to-gray-400 bg-clip-text text-transparent mb-10 md:mb-0">
         COUNTDOWN
       </h3>
 
@@ -32,7 +32,7 @@ export default function CountdownSection() {
       <CountdownTimer />
 
       {/* Register Button */}
-      <button className="font-cerapro font-medium mt-4 bg-gradient-to-b from-gray-200 to-gray-400 text-black px-8 md:px-10 py-2 rounded-2xl hover:from-white hover:to-gray-300 transition-all duration-200">
+      <button className="font-cerapro font-medium mt-4 bg-linear-to-b from-gray-200 to-gray-400 text-black px-8 md:px-10 py-2 rounded-2xl hover:from-white hover:to-gray-300 transition-all duration-200">
         REGISTER
       </button>
     </section>

@@ -13,7 +13,7 @@ export default function Hero() {
       {/* Added `relative` here to act as the positioning context 
         for all the `absolute` elements inside.
       */}
-      <div className="md:h-screen h-auto min-h-[40vh] w-full flex flex-col items-center justify-center  overflow-hidden  relative mt-[6vh]">
+      <div className="md:h-screen h-auto min-h-[40vh] bg-black w-full flex flex-col items-center justify-center  overflow-hidden  relative mt-[6vh]">
         <div className="h-full w-full flex flex-col items-center justify-center overflow-hidden relative">
           <div className="flex flex-col items-center justify-center p-5  relative">
             {/* Responsive text size and tracking */}
