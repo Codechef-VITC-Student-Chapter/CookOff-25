@@ -8,14 +8,13 @@ export default function Hero() {
   const hatDelay = 2.5;
   const numberDelay = hatDelay + 1.8;
   const baseDelay = 5;
-
   return (
     <>
       {/* Added `relative` here to act as the positioning context 
         for all the `absolute` elements inside.
       */}
-      <div className="h-[120vh] w-full flex flex-col items-center justify-center  lg:mt-10 py-7  overflow-hidden  relative">
-        <div className="h-screen w-full flex flex-col items-center justify-center overflow-hidden relative">
+      <div className="md:h-screen h-auto min-h-[40vh] bg-black w-full flex flex-col items-center justify-center  overflow-hidden  relative mt-[6vh]">
+        <div className="h-full w-full flex flex-col items-center justify-center overflow-hidden relative">
           <div className="flex flex-col items-center justify-center p-5  relative">
             {/* Responsive text size and tracking */}
             <motion.h1
@@ -75,13 +74,13 @@ export default function Hero() {
               />
             </div>
 
-            <h1 className="text-sm font-serif hidden max-[430px]:inline">2025</h1>
+            <h1 className="text-md font-serif hidden max-sm:inline">2025</h1>
 
             {/* Replaced non-standard `mr-160` with responsive absolute positioning.
             This positions it relative to the center of the screen.
           */}
             <motion.h1
-              className="max-[430px]:hidden inline text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-white text-center p-4 absolute font-serif font-medium
+              className="max-sm:hidden inline text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-white text-center p-4 absolute font-serif font-medium
               mt-44 sm:mt-44 md:mt-64 lg:mt-80  
               right-[calc(50%+7rem)] sm:right-[calc(50%+9rem)] md:right-[calc(50%+14rem)] xl:right-[calc(50%+16rem)]"
               style={{ lineHeight: 1 }}
@@ -100,7 +99,7 @@ export default function Hero() {
 
             <motion.div
               // Apply all positioning and layout classes to the motion wrapper
-              className="max-[430px]:hidden inline text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-white text-center p-4 absolute font-serif font-medium
+              className="max-sm:hidden inline text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-white text-center p-4 absolute font-serif font-medium
           mt-44 sm:mt-44 md:mt-64 lg:mt-80 
           left-[calc(50%+7rem)] sm:left-[calc(50%+8rem)] md:left-[calc(50%+14rem)] xl:left-[calc(50%+16rem)]"
               style={{ lineHeight: 1 }}
@@ -139,7 +138,7 @@ export default function Hero() {
           src="/images/image 2.png"
           alt="Chef's Cap"
           className="max-[430px]:hidden block w-16 md:w-24 lg:w-32 absolute z-1 
-             top-[46%] md:top-[42%] lg:top-[40%] 
+             top-[35%] md:top-[42%] lg:top-[40%] 
              left-[calc(50%+6.5rem)] md:left-[calc(50%+12rem)] lg:left-[calc(50%+18rem)]"
           // Initial state: Start far above the screen by offsetting its final position
           initial={{ y: -500 }} // Start 500px above its resting place
@@ -160,7 +159,7 @@ export default function Hero() {
           src="/images/image 1.png"
           alt="Chef's Cap"
           className="max-[430px]:hidden w-12 md:w-24 lg:w-32 absolute z-1
-            top-[46%] md:top-[40%] lg:top-[36%] 
+            top-[35%] md:top-[40%] lg:top-[36%] 
             right-[calc(50%+7rem)] md:right-[calc(50%+12.5rem)] lg:right-[calc(50%+18.5rem)]"
           // Initial state: Start even higher
           initial={{ y: -700 }}
