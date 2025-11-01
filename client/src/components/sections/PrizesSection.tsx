@@ -30,7 +30,7 @@ const PrizesSection = () => {
                     ></div>
 
                     <p className="font-cerapro font-medium relative bottom-30 text-3xl md:text-4xl">
-                        ######
+                        ???
                     </p>
 
                     <div className="relative">
@@ -69,7 +69,7 @@ const PrizesSection = () => {
                     ></div>
 
                     <p className="font-cerapro font-medium relative bottom-30 text-3xl md:text-4xl">
-                        $$$$$$$
+                        ???
                     </p>
 
                     <div className="relative">
@@ -107,7 +107,7 @@ const PrizesSection = () => {
                     ></div>
 
                     <p className="font-cerapro font-medium text-white relative bottom-30 text-3xl md:text-4xl">
-                        $$$$$$
+                        ???
                     </p>
 
                     <div className="relative -top-10">
