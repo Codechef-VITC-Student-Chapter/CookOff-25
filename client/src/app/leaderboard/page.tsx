@@ -34,18 +34,20 @@ const query = `*[_type == "Clubs"]{
   totalPoints,
   teamType
 }`;
-function isClub(doc: any): doc is Club {
+function isClub(doc: unknown): doc is Club {
+  const obj = doc as Record<string, unknown>;
   return (
-    doc &&
-    typeof doc._id === "string" &&
-    typeof doc.teamName === "string" &&
-    typeof doc.College === "string" &&
-    typeof doc.Round1 === "number" &&
-    typeof doc.Round2 === "number" &&
-    typeof doc.Round3 === "number" &&
-    typeof doc.totalPoints === "number"
+    obj &&
+    typeof obj._id === "string" &&
+    typeof obj.teamName === "string" &&
+    typeof obj.College === "string" &&
+    typeof obj.Round1 === "number" &&
+    typeof obj.Round2 === "number" &&
+    typeof obj.Round3 === "number" &&
+    typeof obj.totalPoints === "number"
   );
 }
+
 
 
 const LeaderboardPage: React.FC = () => {
