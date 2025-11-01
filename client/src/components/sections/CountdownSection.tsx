@@ -32,9 +32,12 @@ export default function CountdownSection() {
       <CountdownTimer />
 
       {/* Register Button */}
+      <a href="https://chennaievents.vit.ac.in/technovit/mainDashboard">
+
       <button className="font-cerapro font-medium mt-4 bg-linear-to-b from-gray-200 to-gray-400 text-black px-8 md:px-10 py-2 rounded-2xl hover:from-white hover:to-gray-300 transition-all duration-200">
         REGISTER
       </button>
+      </a>
     </section>
   );
 }
