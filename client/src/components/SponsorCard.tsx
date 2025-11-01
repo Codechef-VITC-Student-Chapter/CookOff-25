@@ -24,9 +24,14 @@ const SponsorCard: React.FC<SponsorCardProps> = ({
 
         {/* Card */}
         <div
-          className={`mt-1 bg-white 
+          className={sponsorName=="MGM HEALTHCARE"?`mt-1 bg-white 
+          w-52 md:w-64 lg:w-96
+          h-66  md:h-90
+          border-2 border-black 
+          shadow-[13px_10px_19px_2px_rgba(255,255,255,0.75)]
+          relative flex flex-col items-center`:`mt-1 bg-white 
           w-34 md:w-43 lg:w-58 
-          h-66  md:h-94
+          h-66  md:h-90
           border-2 border-black 
           shadow-[13px_10px_19px_2px_rgba(255,255,255,0.75)]
           relative flex flex-col items-center`}
@@ -41,13 +46,22 @@ const SponsorCard: React.FC<SponsorCardProps> = ({
 
           {/* Logo */}
           <div className="flex-1 w-full flex justify-center items-center p-3">
-            <Image
+            {
+              sponsorName=="MGM HEALTHCARE"?
+              <Image
+              src={logoUrl}
+              alt={`${sponsorName} logo`}
+              width={80}
+              height={80}
+              className="object-fill w-[80%] sm:w-[70%] md:w-[65%]"
+              />:  <Image
               src={logoUrl}
               alt={`${sponsorName} logo`}
               width={120}
               height={120}
               className="object-fill  w-[80%] sm:w-[70%] md:w-[75%]"
-            />
+              />
+            }
           </div>
 
           {/* Sponsor Name */}

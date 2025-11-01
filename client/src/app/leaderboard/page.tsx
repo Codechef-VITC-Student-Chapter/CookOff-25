@@ -179,7 +179,7 @@ const LeaderboardPage: React.FC = () => {
   ];
 console.log(topsTeamsByRound);
   return (
-    <div className="min-h-screen bg-[#121212] overflow-hidden text-white pt-[6vh]">
+    <div className="min-h-screen bg-black overflow-hidden text-white pt-[6vh]">
       <Navbar />
 
       <div className="py-10 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto">
