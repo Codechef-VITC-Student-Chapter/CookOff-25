@@ -35,7 +35,7 @@ export default function ContestPage() {
   const rounds = [1, 2, 3];
 
   return (
-    <div className="min-h-screen bg-[#121212] text-white flex flex-col items-center pt-20 px-4">
+    <div className="min-h-screen bg-black text-white flex flex-col items-center pt-20 px-4">
       <Navbar />
 
       {rounds.map((round) => {

@@ -13,7 +13,7 @@ type FaqItem = {
 const faqs: FaqItem[] = [
     {
         ques: "What is CodeChef Cookoff?",
-        ans: "A competitive coding event with increasing rounds of difficulty and elimination until there is an ultimate winner. It is an individual event requiring skills and problem-solving competence."
+        ans: "A competitive coding event with increasing rounds of difficulty and elimination until there is an ultimate winner. It is an individual event requiring skills and problem solving competence."
     },
     {
         ques: "Is there a registration fee??",

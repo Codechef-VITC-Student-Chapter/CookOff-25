@@ -21,7 +21,7 @@ export default function CountdownSection() {
           Gear up for the ultimate coding showdown. Code, compete, and crush the
           challenge
         </p>
-        <div className="h-[1px] opacity-100 w-full mx-auto border-2 border-gray-400" />
+        <div className="h-px opacity-100 w-full mx-auto border-2 border-gray-400" />
       </div>
 
       <h3 className="font-cerapro font-medium uppercase tracking-widest text-xl md:text-3xl bg-linear-to-r from-white to-gray-400 bg-clip-text text-transparent mb-10 md:mb-0">
